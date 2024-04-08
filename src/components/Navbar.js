@@ -39,12 +39,12 @@ function Navbar(props) {
   );
 }
 Navbar.propTypes = {
-  title: PropTypes.string,
-  aboutText: PropTypes.string,
+  title: PropTypes.string.isRequired,
+  aboutText: PropTypes.string.isRequired,
 };
-Navbar.defaultProps = {
-  title: "Set title here...",
-  aboutText: "Contact Us",
-};
+// Navbar.defaultProps = {
+//   title: "Set title here...",
+//   aboutText: "Contact Us",
+// };
 
 export default Navbar;
