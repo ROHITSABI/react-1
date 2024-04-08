@@ -1,4 +1,4 @@
-//rfc & enter it.
+//Default Prop Types
 import React from "react";
 import PropTypes from "prop-types";
 
@@ -42,4 +42,9 @@ Navbar.propTypes = {
   title: PropTypes.string,
   aboutText: PropTypes.string,
 };
+Navbar.defaultProps = {
+  title: "Set title here...",
+  aboutText: "Contact Us",
+};
+
 export default Navbar;

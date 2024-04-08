@@ -8,7 +8,10 @@ function App() {
 
   return (
     <>
-      <Navbar title="TextUtils" aboutText="About Us" newNumber={3} />
+      {/* <Navbar title="TextUtils" aboutText="About Us" newNumber={3} /> */}
+
+      {/* This is for Default Prop-Types */}
+      <Navbar />
     </>
   );
 }
