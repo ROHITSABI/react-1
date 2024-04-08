@@ -1,5 +1,6 @@
 //rfc & enter it.
 import React from "react";
+import PropTypes from "prop-types";
 
 function Navbar(props) {
   return (
@@ -28,7 +29,7 @@ function Navbar(props) {
             </li>
             <li class="nav-item">
               <a class="nav-link" href="/">
-                About
+                {props.aboutText}
               </a>
             </li>
           </ul>
@@ -37,5 +38,8 @@ function Navbar(props) {
     </nav>
   );
 }
-
+Navbar.propTypes = {
+  title: PropTypes.string,
+  aboutText: PropTypes.string,
+};
 export default Navbar;
