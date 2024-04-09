@@ -10,6 +10,11 @@ function TextForm(props) {
     setText(newText);
   };
 
+  let handleOnClick2 = () => {
+    let newText = text.toLowerCase();
+    setText(newText);
+  };
+
   let handleOnChange = (e) => {
     text = e.target.value;
     setText(text);
@@ -22,24 +27,31 @@ function TextForm(props) {
           <label htmlFor="myBox" className="form-label">
             Email address
           </label>
-          <input
-            type="email"
-            className="form-control"
-            id="myBox"
+          <textarea
+            cols="40"
+            rows="5"
             value={text}
             onChange={handleOnChange}
-          />
+          ></textarea>
+
           <button className="btn btn-primary mt-2" onClick={handleOnClick}>
             Convert to UpperCase
+          </button>
+          <button className="btn btn-primary mt-2" onClick={handleOnClick2}>
+            Convert to LowerCase
           </button>
         </div>
       </div>
       <div className="container">
         <h1>Your Text Summary</h1>
         <p>
-          {text.split(" ").length} words & {text.length} characters
+          {text.split(" ").length} words & {text.length} characters <br />
+          {0.008 * text.split(" ").length} Minutes
         </p>
+        <h2>Preview</h2>
+        {text}
       </div>
+      <div className="container"></div>
     </>
   );
 }
