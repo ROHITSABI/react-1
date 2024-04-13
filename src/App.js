@@ -3,6 +3,7 @@ import "./App.css";
 // import About from "./components/About";
 import Navbar from "./components/Navbar";
 import TextForm from "./components/TextForm";
+import Alert from "./components/Alert";
 
 function App() {
   //Dark mode & Light mode through button
@@ -32,6 +33,7 @@ function App() {
 
       {/* This is for "isRequired" */}
       <Navbar title="TextUtils" mode={mode} toggleMode={toggleMode} btn={btn} />
+      <Alert alert="This is Alert" />
 
       <TextForm heading="Registration Form" mode={mode} />
 
