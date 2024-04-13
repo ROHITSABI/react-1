@@ -51,7 +51,7 @@ function Navbar(props) {
             onClick={props.toggleMode}
           />
           <label className="form-check-label " htmlFor="flexSwitchCheckDefault">
-            Change Mode
+            {props.btn}
           </label>
         </div>
       </div>
