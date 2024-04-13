@@ -2,7 +2,7 @@ import "./App.css";
 import About from "./components/About";
 import Navbar from "./components/Navbar";
 // import TextForm from "./components/TextForm";
-import { useState } from "react";
+// import { useState } from "react";
 
 function App() {
   // let name = "Rohit";
