@@ -1,57 +1,56 @@
-//To calculate the word length and words
 import { useState } from "react";
 
 function TextForm(props) {
-  let [text, setText] = useState("Enter An Email");
+  let [text, setText] = useState("Enter Text Here...");
 
   let handleOnClick = () => {
     console.log("Onclick was clicked");
+    // text = "You Clcick on textarea";
     let newText = text.toUpperCase();
     setText(newText);
   };
 
-  let handleOnClick2 = () => {
+  let handleOnClick1 = () => {
+    console.log("Onclick was clicked");
+    // text = "You Clcick on textarea";
     let newText = text.toLowerCase();
     setText(newText);
   };
 
   let handleOnChange = (e) => {
-    text = e.target.value;
-    setText(text);
+    console.log("OnChange");
+    // console.log(e.target);
+    setText(e.target.value);
   };
   return (
     <>
       <div className="container">
         <h1>{props.heading}</h1>
         <div className="mb-3">
-          <label htmlFor="myBox" className="form-label">
-            Email address
-          </label>
           <textarea
-            cols="40"
-            rows="5"
+            className="form-control"
+            id="exampleFormControlTextarea1"
+            rows="8"
             value={text}
             onChange={handleOnChange}
           ></textarea>
 
-          <button className="btn btn-primary mt-2" onClick={handleOnClick}>
-            Convert to UpperCase
+          <button className="btn btn-primary my-2" onClick={handleOnClick}>
+            Convert To UpperCase
           </button>
-          <button className="btn btn-primary mt-2" onClick={handleOnClick2}>
-            Convert to LowerCase
+          <button
+            className="btn btn-primary my-2 mx-2"
+            onClick={handleOnClick1}
+          >
+            Convert To LowerCase
           </button>
         </div>
       </div>
+
       <div className="container">
-        <h1>Your Text Summary</h1>
-        <p>
-          {text.split(" ").length} words & {text.length} characters <br />
-          {0.008 * text.split(" ").length} Minutes
-        </p>
         <h2>Preview</h2>
-        {text}
+        <p>{text}</p>
       </div>
-      <div className="container"></div>
     </>
   );
 }
