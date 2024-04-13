@@ -5,7 +5,18 @@ import Navbar from "./components/Navbar";
 // import TextForm from "./components/TextForm";
 
 function App() {
-  let [mode] = useState("dark");
+  //Dark mode & Light mode through button
+  //Here we use toggleMode as a 'Props'
+  let [mode, setMode] = useState("dark");
+  let toggleMode = () => {
+    if (mode === "dark") {
+      mode = "light";
+      setMode(mode);
+    } else {
+      mode = "dark";
+      setMode(mode);
+    }
+  };
 
   return (
     <>
@@ -15,7 +26,7 @@ function App() {
       {/* <Navbar /> */}
 
       {/* This is for "isRequired" */}
-      <Navbar title="TextUtils" mode={mode} />
+      <Navbar title="TextUtils" mode={mode} toggleMode={toggleMode} />
 
       {/* <TextForm heading="Registration Form" mode={mode} /> */}
 

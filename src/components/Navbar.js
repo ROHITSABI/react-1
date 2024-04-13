@@ -36,10 +36,11 @@ function Navbar(props) {
           </ul>
         </div>
 
-        {/* To Add a Switch */}
+        {/* ========To Add a Switch======= */}
+        {/* Here We Use toggleMode & change the color of text */}
         <div
           className={`form-check form-switch text-${
-            props.mode === "light" ? "dark" : "light"
+            props.mode === "dark" ? "light" : "dark"
           }`}
         >
           <input
@@ -49,10 +50,7 @@ function Navbar(props) {
             id="flexSwitchCheckDefault"
             onClick={props.toggleMode}
           />
-          <label
-            className="form-check-label text-light"
-            htmlFor="flexSwitchCheckDefault"
-          >
+          <label className="form-check-label " htmlFor="flexSwitchCheckDefault">
             Change Mode
           </label>
         </div>
