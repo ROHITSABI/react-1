@@ -15,7 +15,7 @@ function About() {
 
   let toggleStyle = () => {
     //To Enable Light Mode
-    if (myStyle.color == "white") {
+    if (myStyle.color === "white") {
       myStyle = {
         color: "black",
         backgroundColor: "white",
