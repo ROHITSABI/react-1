@@ -1,9 +1,10 @@
 import { useState } from "react";
 import "./App.css";
-// import About from "./components/About";
+import About from "./components/About";
 import Navbar from "./components/Navbar";
 import TextForm from "./components/TextForm";
 import Alert from "./components/Alert";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 function App() {
   //Dark mode & Light mode through button
@@ -38,23 +39,6 @@ function App() {
     }, 2000);
   };
 
-  //To add another switch in Navbar-->Green to Red
-  let [mode1, setMode1] = useState({
-    color: "green",
-    backgroundColor: "red",
-  });
-  let toggleMode1 = () => {
-    if (mode1.color === "green") {
-      mode1.color = "red";
-      mode1.backgroundColor = "green";
-      setMode1(mode1);
-    } else {
-      mode1.color = "green";
-      mode1.backgroundColor = "red";
-      setMode1(mode1);
-    }
-  };
-
   return (
     <>
       {/* <Navbar title="TextUtils" aboutText="About Us" newNumber={3} /> */}
@@ -63,18 +47,51 @@ function App() {
       {/* <Navbar /> */}
 
       {/* This is for "isRequired" */}
-      <Navbar
-        title="TextUtils"
-        mode={mode}
-        toggleMode={toggleMode}
-        btn={btn}
-        toggleMode1={toggleMode1}
-        mode1={mode1}
-      />
+      {/* <Navbar title="TextUtils" mode={mode} toggleMode={toggleMode} btn={btn} /> */}
       {/* <Alert alert="This is alert" /> */}
-      <Alert alert={alert} />
+      {/* <Alert alert={alert} /> */}
 
-      <TextForm heading="Registration Form" mode={mode} showAlert={showAlert} />
+      {/* <TextForm heading="Registration Form" mode={mode} showAlert={showAlert} /> */}
+
+      {/* =========================== */}
+
+      <Router>
+        <Navbar
+          title="TextUtils"
+          mode={mode}
+          toggleMode={toggleMode}
+          btn={btn}
+        />
+        <Alert alert={alert} />
+        <Routes>
+          {/* //Old Idea */}
+          {/* <Route path="/about">
+            <About />
+          </Route>
+          <Route path="/">
+            <TextForm
+              heading="Registration Form"
+              mode={mode}
+              showAlert={showAlert}
+            />
+          </Route> */}
+
+          {/* //New Idea */}
+          <Route exact path="/about" element={<About />}></Route>
+          <Route
+            exact
+            path="/"
+            element={
+              <TextForm
+                heading="Registration Form"
+                mode={mode}
+                showAlert={showAlert}
+              />
+            }
+          ></Route>
+        </Routes>
+      </Router>
+      {/* =========================== */}
 
       {/* <About /> */}
     </>

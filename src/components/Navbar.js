@@ -1,15 +1,16 @@
 import React from "react";
 import PropTypes from "prop-types";
+import { Link } from "react-router-dom";
 
 function Navbar(props) {
   return (
     <nav
-      className={`navbar navbar-expand-lg navbar-${props.mode} bg-${props.mode} navbar-${props.mode1} bg-${props.mode1}`}
+      className={`navbar navbar-expand-lg navbar-${props.mode} bg-${props.mode} `}
     >
       <div className="container-fluid">
-        <a className="navbar-brand" href="/">
+        <Link className="navbar-brand" to="/">
           {props.title}
-        </a>
+        </Link>
         <button
           className="navbar-toggler"
           type="button"
@@ -24,14 +25,14 @@ function Navbar(props) {
         <div className="collapse navbar-collapse" id="navbarNav">
           <ul className="navbar-nav ms-auto">
             <li className="nav-item">
-              <a className="nav-link active" aria-current="page" href="/">
+              <Link className="nav-link active" aria-current="page" to="/">
                 Home
-              </a>
+              </Link>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="/">
+              <Link className="nav-link" to="/about">
                 {props.aboutText}
-              </a>
+              </Link>
             </li>
           </ul>
         </div>
@@ -52,20 +53,6 @@ function Navbar(props) {
           />
           <label className="form-check-label " htmlFor="flexSwitchCheckDefault">
             {props.btn}
-          </label>
-        </div>
-
-        {/* ===========To add a another switch============ */}
-        <div class="form-check form-switch">
-          <input
-            class="form-check-input"
-            type="checkbox"
-            role="switch"
-            id="flexSwitchCheckDefault"
-            onClick={props.toggleMode1}
-          />
-          <label class="form-check-label" for="flexSwitchCheckDefault">
-            Change Green to Red
           </label>
         </div>
       </div>
