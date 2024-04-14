@@ -8,6 +8,7 @@ function TextForm(props) {
     // text = "You Clcick on textarea";
     let newText = text.toUpperCase();
     setText(newText);
+    props.showAlert("Converted To Upper Case", "success");
   };
 
   let handleOnClick1 = () => {
@@ -15,6 +16,7 @@ function TextForm(props) {
     // text = "You Clcick on textarea";
     let newText = text.toLowerCase();
     setText(newText);
+    props.showAlert("Converted To Lower Case", "success");
   };
 
   let handleOnChange = (e) => {

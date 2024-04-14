@@ -46,7 +46,7 @@ function App() {
       {/* <Alert alert="This is alert" /> */}
       <Alert alert={alert} />
 
-      <TextForm heading="Registration Form" mode={mode} />
+      <TextForm heading="Registration Form" mode={mode} showAlert={showAlert} />
 
       {/* <About /> */}
     </>

@@ -1,6 +1,10 @@
 import React from "react";
 
 function Alert(props) {
+  let capitalType = (word) => {
+    let lower = word.toLowerCase();
+    return lower.charAt(0).toUpperCase() + lower.slice(1);
+  };
   return (
     props.alert && (
       <div
@@ -8,7 +12,7 @@ function Alert(props) {
         role="alert"
       >
         {/* <strong>{props.alert}</strong> */}
-        <strong>{props.alert.type}</strong>:{props.alert.msg}
+        <strong>{capitalType(props.alert.type)}</strong>:{props.alert.msg}
         <button
           type="button"
           className="btn-close"
