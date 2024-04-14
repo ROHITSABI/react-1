@@ -38,6 +38,23 @@ function App() {
     }, 2000);
   };
 
+  //To add another switch in Navbar-->Green to Red
+  let [mode1, setMode1] = useState({
+    color: "green",
+    backgroundColor: "red",
+  });
+  let toggleMode1 = () => {
+    if (mode1.color === "green") {
+      mode1.color = "red";
+      mode1.backgroundColor = "green";
+      setMode1(mode1);
+    } else {
+      mode1.color = "green";
+      mode1.backgroundColor = "red";
+      setMode1(mode1);
+    }
+  };
+
   return (
     <>
       {/* <Navbar title="TextUtils" aboutText="About Us" newNumber={3} /> */}
@@ -46,7 +63,14 @@ function App() {
       {/* <Navbar /> */}
 
       {/* This is for "isRequired" */}
-      <Navbar title="TextUtils" mode={mode} toggleMode={toggleMode} btn={btn} />
+      <Navbar
+        title="TextUtils"
+        mode={mode}
+        toggleMode={toggleMode}
+        btn={btn}
+        toggleMode1={toggleMode1}
+        mode1={mode1}
+      />
       {/* <Alert alert="This is alert" /> */}
       <Alert alert={alert} />
 
