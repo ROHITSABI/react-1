@@ -19,9 +19,9 @@ function App() {
     document.body.classList.remove("bg-primary");
     document.body.classList.remove("bg-danger");
   };
-  let toggleMode = (p1) => {
+  let toggleMode = (p2) => {
     removeBodyClasses();
-    document.body.classList.add("bg-" + p1);
+    document.body.classList.add("bg-" + p2);
     if (mode === "light") {
       mode = "dark";
       setMode(mode);
