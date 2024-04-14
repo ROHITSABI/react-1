@@ -16,12 +16,22 @@ function App() {
       setMode(mode);
       setBtn("Change to Dark Mode");
       document.body.style.background = "white";
+      showAlert("Light mode has been enabled", "success");
     } else {
       mode = "dark";
       setMode(mode);
       setBtn("Change to Light Mode");
       document.body.style.background = "grey";
+      showAlert("Dark mode has been enabled", "success");
     }
+  };
+  let [alert, setAlert] = useState(null);
+  let showAlert = (message, type) => {
+    alert = {
+      msg: message,
+      type: type,
+    };
+    setAlert(alert);
   };
 
   return (
@@ -33,7 +43,8 @@ function App() {
 
       {/* This is for "isRequired" */}
       <Navbar title="TextUtils" mode={mode} toggleMode={toggleMode} btn={btn} />
-      <Alert alert="This is Alert" />
+      {/* <Alert alert="This is alert" /> */}
+      <Alert alert={alert} />
 
       <TextForm heading="Registration Form" mode={mode} />
 
