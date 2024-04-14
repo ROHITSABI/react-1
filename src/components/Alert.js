@@ -13,12 +13,6 @@ function Alert(props) {
       >
         {/* <strong>{props.alert}</strong> */}
         <strong>{capitalType(props.alert.type)}</strong>:{props.alert.msg}
-        <button
-          type="button"
-          className="btn-close"
-          data-bs-dismiss="alert"
-          aria-label="Close"
-        ></button>
       </div>
     )
   );

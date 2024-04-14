@@ -32,6 +32,10 @@ function App() {
       type: type,
     };
     setAlert(alert);
+    //Remove 'ALERT' automatically
+    setTimeout(() => {
+      setAlert(null);
+    }, 2000);
   };
 
   return (
