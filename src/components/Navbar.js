@@ -49,11 +49,31 @@ function Navbar(props) {
             type="checkbox"
             role="switch"
             id="flexSwitchCheckDefault"
-            onClick={props.toggleMode}
+            // onClick={props.toggleMode}
+            onClick={() => {
+              props.toggleMode(null);
+            }}
           />
           <label className="form-check-label " htmlFor="flexSwitchCheckDefault">
             {props.btn}
           </label>
+        </div>
+
+        <div className="d-flex">
+          <div
+            className="bg-primary rounded mx-2"
+            onClick={() => {
+              props.toggleMode("primary");
+            }}
+            style={{ height: "30px", width: "30px" }}
+          ></div>
+          <div
+            className="bg-danger rounded mx-2"
+            onClick={() => {
+              props.toggleMode("danger");
+            }}
+            style={{ height: "30px", width: "30px" }}
+          ></div>
         </div>
       </div>
     </nav>

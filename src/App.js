@@ -11,7 +11,17 @@ function App() {
   //Here we use toggleMode as a 'Props'
   let [mode, setMode] = useState("light");
   let [btn, setBtn] = useState("Change to Dark Mode");
-  let toggleMode = () => {
+
+  let removeBodyClasses = () => {
+    document.body.classList.remove("bg-light");
+    document.body.classList.remove("bg-dark");
+    document.body.classList.remove("bg-success");
+    document.body.classList.remove("bg-primary");
+    document.body.classList.remove("bg-danger");
+  };
+  let toggleMode = (p1) => {
+    removeBodyClasses();
+    document.body.classList.add("bg-" + p1);
     if (mode === "light") {
       mode = "dark";
       setMode(mode);
