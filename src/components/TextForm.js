@@ -43,7 +43,11 @@ function TextForm(props) {
             }}
           ></textarea>
 
-          <button className="btn btn-primary my-2" onClick={handleOnClick}>
+          <button
+            className="btn btn-primary my-2"
+            onClick={handleOnClick}
+            disabled={text.length === 0}
+          >
             Convert To UpperCase
           </button>
           <button
