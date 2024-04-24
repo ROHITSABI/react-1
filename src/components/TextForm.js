@@ -4,14 +4,19 @@ import { useState } from "react";
 function TextForm(props) {
   let [text, setText] = useState("Enter An Email");
 
-  let handleOnClick = () => {
-    console.log("Onclick was clicked");
-    let newText = text.toUpperCase();
-    setText(newText);
-  };
+  // let handleOnClick = () => {
+  //   console.log("Onclick was clicked");
+  //   let newText = text.toUpperCase();
+  //   setText(newText);
+  // };
 
-  let handleOnClick2 = () => {
-    let newText = text.toLowerCase();
+  // let handleOnClick2 = () => {
+  //   let newText = text.toLowerCase();
+  //   setText(newText);
+  // };
+
+  let handleOnClick = (p1) => {
+    let newText = p1;
     setText(newText);
   };
 
@@ -27,6 +32,7 @@ function TextForm(props) {
           <label htmlFor="myBox" className="form-label">
             Email address
           </label>
+          <br />
           <textarea
             cols="40"
             rows="5"
@@ -34,10 +40,27 @@ function TextForm(props) {
             onChange={handleOnChange}
           ></textarea>
 
-          <button className="btn btn-primary mt-2" onClick={handleOnClick}>
+          <br />
+          {/* <button className="btn btn-primary mt-2" onClick={handleOnClick}>
             Convert to UpperCase
           </button>
-          <button className="btn btn-primary mt-2" onClick={handleOnClick2}>
+          <button
+            className="btn btn-primary mt-2 mx-2"
+            onClick={handleOnClick2}
+          >
+            Convert to LowerCase
+          </button> */}
+
+          <button
+            className="btn btn-primary mt-2"
+            onClick={() => handleOnClick(text.toUpperCase())}
+          >
+            Convert to UpperCase
+          </button>
+          <button
+            className="btn btn-primary mt-2 mx-2"
+            onClick={() => handleOnClick(text.toLowerCase())}
+          >
             Convert to LowerCase
           </button>
         </div>
